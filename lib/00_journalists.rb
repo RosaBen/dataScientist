@@ -89,6 +89,17 @@ def sortByLength(list)
   toSort.sort_by {|element| element.length}
 end
 
-puts sortByLength(list1)
+# puts sortByLength(list1)
 
 # ------------------------------------------------------------------
+# Quelle est la position dans l'array de la personne @epenser ?
+# https://apidock.com/ruby/v2_5_5/Enumerable/find_index
+
+def find(list)
+result = list.find_index {|i| i.to_s=="@epenser"}
+return result
+end
+
+puts find(list1)
+
+# ------------------------------------------------------------
