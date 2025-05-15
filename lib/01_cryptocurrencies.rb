@@ -45,4 +45,17 @@ def minValue (keys, values)
   return "devise: #{keyminValue} valeur: #{minValue}"
   end 
  
-  puts minValue(names, values)
+  # puts minValue(names, values)
+
+# ----------------------------------------------------
+# donner Les devises dont le cours est inférieur à 6000
+# https://apidock.com/ruby/v2_6_3/Hash/filter
+
+def lessThan6000 (keys, values)
+valuesHashed = hashedList(keys, values)
+lessTahn6000 = valuesHashed.select { |key, value| value < 6000 }
+return lessTahn6000
+end
+
+# puts lessThan6000(names, values)
+# ----------------------------------------------------
