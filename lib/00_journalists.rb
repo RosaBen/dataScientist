@@ -9,7 +9,7 @@ end
 
 # puts arrayLength(list1)
 
-
+# ------------------------------------------------------------------------------
 # Quel est le handle le plus court de cette liste ?
 
 def shortHandle (list1)
@@ -23,7 +23,7 @@ end
 
 # puts shortHandle(list1)
 
-
+# ------------------------------------------------------------------------------
 # Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère)
 
 def min5(list1)
@@ -38,6 +38,7 @@ end
 
 # puts min5(list1)
 
+# -----------------------------------------------------------------------------------
 # Combien commencent par une majuscule (première lettre juste après le @) ?
 
 def uppercase(list1)
@@ -50,4 +51,20 @@ def uppercase(list1)
 end
 
 # puts uppercase(list1)
+
+# ------------------------------------------------------------
+# Trie la liste de handle par ordre alphabétique.
+def newList(list1)
+  handles = []
+  list1.each do |text|
+    re = /^@/m
+    str = text
+    result = str.gsub(re, "")
+    puts result
+    handles.push(result) 
+  end
+  return handles.sort
+end
+
+# puts newList(list1)
 
