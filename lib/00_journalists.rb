@@ -68,3 +68,27 @@ end
 
 # puts newList(list1)
 
+# ----------------------------------------------------------------
+# Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)
+# https://apidock.com/ruby/Enumerable/sort_by
+
+def newList(list1)
+  handles = []
+  list1.each do |text|
+    re = /^@/m
+    str = text
+    result = str.gsub(re, "")
+    puts result
+    handles.push(result) 
+  end
+  return handles
+end
+
+def sortByLength(list)
+  toSort = newList(list)
+  toSort.sort_by {|element| element.length}
+end
+
+puts sortByLength(list1)
+
+# ------------------------------------------------------------------
