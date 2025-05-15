@@ -38,5 +38,16 @@ end
 
 # puts min5(list1)
 
+# Combien commencent par une majuscule (première lettre juste après le @) ?
 
+def uppercase(list1)
+  handles = []
+  list1.each do |name|
+    
+    handles.push(name) if name[1] =~ /[A-Z]/
+  end
+  return handles.length
+end
+
+# puts uppercase(list1)
 
