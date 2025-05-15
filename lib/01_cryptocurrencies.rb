@@ -59,3 +59,13 @@ end
 
 # puts lessThan6000(names, values)
 # ----------------------------------------------------
+# La devise la plus chère parmi celles dont le cours est inférieur à 6000
+
+def maxValueLessThan6000 (keys, values)
+hashed = lessThan6000(keys, values)
+maxValue = hashed.values.max
+keyMaxValue = hashed.key(maxValue)
+return "devise: #{keyMaxValue} valeur: #{maxValue}"
+end
+
+puts maxValueLessThan6000(names, values)
