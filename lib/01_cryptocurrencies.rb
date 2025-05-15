@@ -12,11 +12,27 @@ values1 = ["6558.07", "468.95", "0.487526", "762.84", "8.86", "85.26", "0.151268
 # Associe chaque devise à son montant pour obtenir un hash
 # https://apidock.com/ruby/v2_5_5/Enumerable/to_h
 # https://apidock.com/ruby/v2_5_5/Enumerable/zip
-def hashedList(list1, list2)
-hashed = list1.zip(list2).to_h
-return hashed
+# https://apidock.com/ruby/Hash#1118-Generalized-Zip
+# https://apidock.com/ruby/v2_5_5/Hash/transform_values
+
+def hashedList(keys, values)
+hashed = keys.zip(values).to_h
+floatHashed= hashed.transform_values(&:to_f)
+return floatHashed
 end
 
 # puts hashedList(names, values)
 
+# ----------------------------------------------------
+# donner La ou les crypto qui ont la plus grosse valeur.
+# https://apidock.com/ruby/v2_5_5/Hash/each_value
 
+def maxValue (keys, values)
+valuesHashed = hashedList(keys, values)
+maxValue = valuesHashed.values.max
+keyMaxValue = valuesHashed.key(maxValue)
+return "devise: #{keyMaxValue} valeur: #{maxValue}"
+end 
+# puts maxValue(names, values)
+
+# ----------------------------------------------------
