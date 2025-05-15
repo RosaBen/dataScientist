@@ -36,3 +36,13 @@ end
 # puts maxValue(names, values)
 
 # ----------------------------------------------------
+# donner La ou les crypto qui ont la plus petite valeur.
+
+def minValue (keys, values)
+  valuesHashed = hashedList(keys, values)
+  minValue = valuesHashed.values.min
+  keyminValue = valuesHashed.key(minValue)
+  return "devise: #{keyminValue} valeur: #{minValue}"
+  end 
+ 
+  puts minValue(names, values)
